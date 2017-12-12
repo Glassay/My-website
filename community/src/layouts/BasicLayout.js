@@ -5,8 +5,9 @@
 
 import React from 'react';
 // import 'semantic-ui-css/semantic.min.css';
-import { Layout, Menu } from 'antd';
+import { Layout, Avatar, Row } from 'antd';
 import styles from './BasicLayout.less';
+import Card from '../comtens/Card';
 
 const { Header, Content, Footer } = Layout;
 
@@ -15,21 +16,27 @@ class MainLayout extends React.Component {
   render() {
     return (
       <div>
-        <Layout>
-          <Header>
-            <div className={styles.logo}><div>123</div></div>
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              style={{ lineHeight: '64px' }}
-            >
-              <Menu.Item key="1">nav 1</Menu.Item>
-            </Menu>
+        <Layout className={styles.color}>
+          <Header className={styles.header}>
+            <Row type="flex" justify="space-between" align="middle">
+              <div className={styles.title}>Todpole‘Community</div>
+              <Row type="flex" justify="space-between" align="middle" style={{ width: '10%', marginRight: '10%' }} >
+                <div className={styles.fatie}>发帖</div>
+                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size="large" className={styles.icon} />
+              </Row>
+            </Row>
           </Header>
-          <Content style={{ width: '80%', margin: 'auto' }}>
-            <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
+          <Content style={{ width: '60%', margin: 'auto' }} >
+            <div style={{ padding: 24, minHeight: 280 }} className={styles.color}>
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
+          <Footer style={{ textAlign: 'center' }} className={styles.color}>
             华北电力大学科技学院论坛
           </Footer>
         </Layout>
