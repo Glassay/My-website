@@ -20,7 +20,7 @@ class MainLayout extends React.Component {
         <Layout className={styles.color}>
           <Header className={styles.header}>
             <Row type="flex" justify="space-between" align="middle">
-              <Link to="/text">
+              <Link to="/m">
                 <div className={styles.title}>Todpole‘Community</div>
               </Link>
               <Row type="flex" justify="space-between" align="middle" style={{ width: '14%', marginRight: '10%' }} >
@@ -44,7 +44,7 @@ class MainLayout extends React.Component {
                     <Card />
                   </div>}
               />
-              <Route path="/text" render={() => <h1>aa</h1>} />
+              <Route exact path="/text" render={() => <h1>aa</h1>} />
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center' }} className={styles.color}>
