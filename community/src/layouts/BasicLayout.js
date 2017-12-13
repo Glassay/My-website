@@ -9,6 +9,7 @@ import { Layout, Avatar, Row, Button } from 'antd';
 import { Link, Switch, Route } from 'dva/router';
 import styles from './BasicLayout.less';
 import Card from '../comtens/Card';
+import Edit from '../comtens/edit';
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,7 +21,7 @@ class MainLayout extends React.Component {
         <Layout className={styles.color}>
           <Header className={styles.header}>
             <Row type="flex" justify="space-between" align="middle">
-              <Link to="/m">
+              <Link to="/main">
                 <div className={styles.title}>Todpole‘Community</div>
               </Link>
               <Row type="flex" justify="space-between" align="middle" style={{ width: '14%', marginRight: '10%' }} >
@@ -34,7 +35,7 @@ class MainLayout extends React.Component {
           <Content style={{ width: '60%', margin: 'auto' }} >
             <Switch>
               <Route
-                path="/m" render={() =>
+                path="/main" render={() =>
                   <div style={{ padding: 24, minHeight: 280 }} className={styles.color}>
                     <Card />
                     <Card />
@@ -44,7 +45,7 @@ class MainLayout extends React.Component {
                     <Card />
                   </div>}
               />
-              <Route exact path="/text" render={() => <h1>aa</h1>} />
+              <Route exact path="/text" render={() => <Edit />} />
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center' }} className={styles.color}>
