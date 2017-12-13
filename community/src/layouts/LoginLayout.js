@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Segment, Modal } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './LoginLayout.less';
@@ -30,7 +30,7 @@ class Login extends React.Component {
         >
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h1" color="teal" textAlign="center">
-              {' '}Todpole’Community
+              Todpole’Community
             </Header>
             <Form size="large">
               <Segment stacked>
@@ -47,12 +47,61 @@ class Login extends React.Component {
                   placeholder="Password"
                   type="password"
                 />
-                <Button color="teal" fluid size="large">登录</Button>
+                <div className={styles.button}>
+                  <Button animated="fade" color="teal" fluid size="large">
+                    <Button.Content hidden>Login</Button.Content>
+                    <Button.Content visible>登录</Button.Content>
+                  </Button>
+                </div>
+                <Modal
+                  trigger={
+                    <Button animated="fade" color="teal" fluid size="large">
+                      <Button.Content hidden>Register</Button.Content>
+                      <Button.Content visible>注册</Button.Content>
+                    </Button>
+                  }
+                >
+                  <Header as="h1" color="teal" textAlign="center">
+                    注册/Register
+                  </Header>
+                  <Modal.Content>
+                    <Modal.Description>
+                      <Form>
+                        <Form.Field>
+                          <Header as="h5" color="teal">Username</Header>
+                          <div>
+                            <Form.Input
+                              color="teal"
+                              fluid
+                              icon="user"
+                              iconPosition="left"
+                              placeholder="E-mail address"
+                            />
+                          </div>
+                          <Header as="h5" color="teal">Password</Header>
+                          <div>
+                            <Form.Input
+                              color="teal"
+                              fluid
+                              icon="lock"
+                              iconPosition="left"
+                              placeholder="Password"
+                              type="password"
+                            />
+                          </div>
+                          <div className={styles.register}>
+                            <Button animated="fade" color="teal" fluid size="large">
+                              <Button.Content hidden>Register</Button.Content>
+                              <Button.Content visible>注册</Button.Content>
+                            </Button>
+                          </div>
+                        </Form.Field>
+                      </Form>
+                    </Modal.Description>
+                  </Modal.Content>
+                </Modal>
               </Segment>
             </Form>
-            {/* <Message>
-              Welcome！
-            </Message> */}
           </Grid.Column>
         </Grid>
       </div>
