@@ -45,7 +45,7 @@ class MainLayout extends React.Component {
                     <Card />
                   </div>}
               />
-              <Route exact path="/text" render={() => <Edit />} />
+              <Route path="/text" render={() => <Edit />} />
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center' }} className={styles.footer}>
