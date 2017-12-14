@@ -11,6 +11,25 @@ import 'semantic-ui-css/semantic.min.css';
 import styles from './LoginLayout.less';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      passward: '',
+    };
+  }
+
+  handleUsernameChange(event) {
+    this.setState({
+      username: event.target.value,
+    });
+  }
+
+  handlePasswardChange(event) {
+    this.setState({
+      passward: event.target.value,
+    });
+  }
   render() {
     return (
       <div className="login-form">
@@ -39,6 +58,8 @@ class Login extends React.Component {
                   icon="user"
                   iconPosition="left"
                   placeholder="E-mail address"
+                  value={this.state.username}
+                  onChange={this.handleUsernameChange.bind(this)}
                 />
                 <Form.Input
                   fluid
@@ -46,6 +67,8 @@ class Login extends React.Component {
                   iconPosition="left"
                   placeholder="Password"
                   type="password"
+                  value={this.state.passward}
+                  onChange={this.handlePasswardChange.bind(this)}
                 />
                 <div className={styles.button}>
                   <Button animated="fade" color="teal" fluid size="large">

@@ -48,7 +48,7 @@ class MainLayout extends React.Component {
               <Route exact path="/text" render={() => <Edit />} />
             </Switch>
           </Content>
-          <Footer style={{ textAlign: 'center' }} className={styles.color}>
+          <Footer style={{ textAlign: 'center' }} className={styles.footer}>
             华北电力大学科技学院论坛
           </Footer>
         </Layout>
