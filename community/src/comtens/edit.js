@@ -14,7 +14,7 @@ class Edit extends React.Component {
             <TextArea placeholder="内容" rows={22} />
           </Col>
           <Col span={1}>
-            <div>123</div>
+            <div>Button</div>
           </Col>
         </Row>
         <Divider />
