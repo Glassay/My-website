@@ -1,7 +1,7 @@
 /**
  * 2017-12-11 Glassay & Kidder
  * 论坛登录界面
- * CSS By Grommet
+ * CSS By Semantic
  */
 
 import React from 'react';
@@ -34,13 +34,6 @@ class Login extends React.Component {
     return (
       <div className="login-form">
         <link rel="stylesheet" href="assets/css/animate.css" />
-        {/* <style>{`
-          body > div,
-          body > div > div,
-          body > div > div > div.login-form {
-            height: 100%
-          }
-        `}</style> */}
         <Grid
           textAlign="center"
           style={{ minHeight: '103vh' }}
