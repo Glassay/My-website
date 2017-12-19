@@ -1,3 +1,7 @@
+/**
+ * 2017-12-19 Glassay & Kidder
+ * 发帖
+ */
 import React from 'react';
 import { Divider, Input, Button, Row, Col, Icon } from 'antd';
 // import ReactMarkdown from 'react-markdown';
@@ -13,7 +17,7 @@ class Edit extends React.Component {
         <Divider />
         <Row>
           <Col span={23}>
-            <TextArea placeholder="内容" rows={22} />
+            <TextArea placeholder="内容" rows={23} />
           </Col>
           <Col span={1} className={styles.markicon}>
             <div className={styles.icon}>H1</div>

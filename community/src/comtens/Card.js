@@ -1,3 +1,7 @@
+/**
+ * 2017-12-19 Glassay & Kidder
+ * 卡片
+ */
 import React from 'react';
 import { Avatar, Divider, Icon, Row } from 'antd';
 import { Button, Modal } from 'semantic-ui-react';
