@@ -4,8 +4,9 @@
  */
 import React from 'react';
 import { Avatar, Divider, Icon, Row } from 'antd';
-import { Button, Modal } from 'semantic-ui-react';
+import { Modal } from 'semantic-ui-react';
 import styles from './Card.less';
+import Review from '../component/Comment';
 
 
 class Card extends React.Component {
@@ -41,11 +42,8 @@ class Card extends React.Component {
               <div className={styles.main_article}>{this.state.article}</div>
             </Modal.Description>
           </Modal.Content>
-          <Modal.Actions>
-            <Button primary>
-              Proceed <Icon name="right chevron" />
-            </Button>
-          </Modal.Actions>
+          {/* </Modal.Actions> */}
+          <Review />
         </Modal>
         <div>
           <div className={styles.cardicon}>
