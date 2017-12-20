@@ -1,11 +1,18 @@
 'use strict';
 
-const Controller = require('egg').Controller;
+// const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
-  * getUserId() {
-    this.ctx.body = yield this.service.text.getUserId();
+module.exports = app => {
+  class HomeController extends app.Controller {
+    * getUserId() {
+      const { user, password } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.getUserId(user, password);
+    }
+    * register() {
+      const { user, password } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.register(user, password);
+    }
   }
-}
 
-module.exports = HomeController;
+  return HomeController;
+}

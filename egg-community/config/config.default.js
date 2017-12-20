@@ -10,7 +10,7 @@ module.exports = appInfo => {
   config.middleware = [];
   config.security = {
     csrf: {
-      ignoreJSON: true,
+      enable: false,
     },
   };
   exports.mysql = {

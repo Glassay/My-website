@@ -17,6 +17,8 @@ class Login extends React.Component {
       username: '',
       passward: '',
     };
+
+    this.onLogin = this.onLogin.bind(this);
   }
 
   handleUsernameChange(event) {
@@ -30,6 +32,7 @@ class Login extends React.Component {
       passward: event.target.value,
     });
   }
+
   render() {
     return (
       <div className="login-form">
@@ -64,7 +67,7 @@ class Login extends React.Component {
                   onChange={this.handlePasswardChange.bind(this)}
                 />
                 <div className={styles.button}>
-                  <Button animated="fade" color="teal" fluid size="large">
+                  <Button animated="fade" color="teal" fluid size="large" onClick={this.onLogin}>
                     <Button.Content hidden>Login</Button.Content>
                     <Button.Content visible>登录</Button.Content>
                   </Button>
