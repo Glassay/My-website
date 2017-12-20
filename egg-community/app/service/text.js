@@ -1,8 +1,10 @@
+/**
+ * 2017-12-20 kidder && Glassay
+ */
 'use strict';
 
 module.exports = app => {
   class Sql extends app.Service {
-    // 在kidder表格中添加一条
     * getUserId(a) {
       let res;
       try {

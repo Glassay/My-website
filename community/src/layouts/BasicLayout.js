@@ -25,7 +25,7 @@ class MainLayout extends React.Component {
                 <div className={styles.title}>Todpole‘Community</div>
               </Link>
               <Row type="flex" justify="space-between" align="middle" style={{ width: '14%', marginRight: '10%' }} >
-                <Link to="/text">
+                <Link to="/main/text">
                   <Button icon="edit" type="primary" className={styles.button}>发帖</Button>
                 </Link>
                 <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size="large" className={styles.icon} />
@@ -34,6 +34,7 @@ class MainLayout extends React.Component {
           </Header>
           <Content style={{ width: '60%', margin: 'auto' }} >
             <Switch>
+              <Route path="/main/text" render={() => <Edit />} />
               <Route
                 path="/main" render={() =>
                   <div style={{ padding: 24, minHeight: 280 }} className={styles.color}>
@@ -45,7 +46,6 @@ class MainLayout extends React.Component {
                     <Card />
                   </div>}
               />
-              <Route path="/text" render={() => <Edit />} />
             </Switch>
           </Content>
           <Footer style={{ textAlign: 'center' }} className={styles.footer}>
