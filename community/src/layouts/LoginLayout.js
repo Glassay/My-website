@@ -18,7 +18,7 @@ class Login extends React.Component {
       passward: '',
     };
 
-    this.onLogin = this.onLogin.bind(this);
+    // this.onLogin = this.onLogin.bind(this);
   }
 
   handleUsernameChange(event) {
