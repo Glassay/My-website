@@ -42,8 +42,6 @@ class MainLayout extends React.Component {
                     <Card />
                     <Card />
                     <Card />
-                    <Card />
-                    <Card />
                   </div>}
               />
             </Switch>
