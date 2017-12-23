@@ -6,7 +6,7 @@ import React from 'react';
 import { Avatar, Divider, Icon, Row } from 'antd';
 import { Modal } from 'semantic-ui-react';
 import styles from './Card.less';
-import Review from '../component/Comment';
+import Comment from './comment/Comment';
 
 
 class Card extends React.Component {
@@ -43,7 +43,8 @@ class Card extends React.Component {
             </Modal.Description>
           </Modal.Content>
           {/* </Modal.Actions> */}
-          <Review />
+          <hr />
+          <Comment />
         </Modal>
         <div>
           <div className={styles.cardicon}>
