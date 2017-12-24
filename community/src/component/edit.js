@@ -2,6 +2,7 @@
  * 2017-12-19 Glassay & Kidder
  * 发帖
  */
+
 import React from 'react';
 import { Divider, Input, Button, Row } from 'antd';
 import styles from './edit.less';
