@@ -18,16 +18,17 @@ module.exports = app => {
     * getUserId(a, b) {
       let res;
       try {
-        res = knex('User').where({
-          user: a,
-          password: b,
-        }).select('id');
+        res = yield app.mysql.get('User', { user: a, password: b });
         // res = knex.select().from('User');
+        console.log('res: ', res);
+        if (res) {
+          return true;
+        }
+        return false;
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
-      return res;
     }
 
     * register(a, b) {

@@ -9,10 +9,17 @@ module.exports = appInfo => {
   // add your config here
   config.middleware = [];
   config.security = {
+    ignore: '/',
     csrf: {
-      enable: false,
+      ignoreJSON: true,
     },
   };
+
+  exports.cors = {
+    origin: '*',
+    allowMethod: 'GET, POST',
+  };
+
   exports.mysql = {
     // 单数据库信息配置
     client: {

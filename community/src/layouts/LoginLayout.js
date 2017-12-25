@@ -5,11 +5,13 @@
  */
 
 import React from 'react';
+import axios from 'axios';
 import { Button, Form, Grid, Header, Segment, Modal } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './LoginLayout.less';
 
+// const { browserHistory } = Router;
 class Login extends React.Component {
   constructor() {
     super();
@@ -19,6 +21,18 @@ class Login extends React.Component {
     };
 
     // this.onLogin = this.onLogin.bind(this);
+  }
+
+  onLogin = () => {
+    axios.post('http://127.0.0.1:7001/getuserid', {
+      user: this.state.username,
+      password: this.state.passward,
+    })
+    .then((response) => {
+      if (response) {
+        this.props.history.push('/main');
+      }
+    });
   }
 
   handleUsernameChange(event) {

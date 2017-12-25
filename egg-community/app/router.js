@@ -5,6 +5,6 @@
  */
 module.exports = app => {
   // const { router, controller } = app;
-  app.post('/getUserId', 'home.getUserId');
+  app.post('/getuserid', 'home.getUserId');
   app.post('/register', 'home.register');
 };
