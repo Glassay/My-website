@@ -19,7 +19,6 @@ class Login extends React.Component {
       username: '',
       passward: '',
     };
-
     // this.onLogin = this.onLogin.bind(this);
   }
 
@@ -29,7 +28,8 @@ class Login extends React.Component {
       password: this.state.passward,
     })
     .then((response) => {
-      if (response) {
+      if (response.data) {
+        console.log(response.data);
         this.props.history.push('/main');
       }
     });
