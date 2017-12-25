@@ -3,16 +3,23 @@
  * 评论输入区
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './comment.less';
 
 class CommentInput extends React.Component {
+  static propsTypes = {
+    onSubmit: PropTypes.func,
+  }
   constructor() {
     super();
     this.state = {
       username: '',
       content: '',
     };
+  }
+
+  componentDidMount() {
+    this.textarea.focus();
   }
 
   handleUsernameChange(event) {
@@ -29,8 +36,10 @@ class CommentInput extends React.Component {
 
   handleSubmit() {
     if (this.props.onSubmit) {
-      const { username, content } = this.state;
-      this.props.onSubmit({ username, content });
+      this.props.onSubmit({
+        username: this.state.username,
+        content: this.state.content,
+      });
     }
     this.setState({ content: '' });
   }
@@ -51,6 +60,7 @@ class CommentInput extends React.Component {
           <span className={styles.comment_field_name}>评论内容：</span>
           <div className={styles.comment_field_input}>
             <textarea
+              ref={(textarea) => { this.textarea = textarea; }}
               value={this.state.content}
               onChange={this.handleContentChange.bind(this)}
             />

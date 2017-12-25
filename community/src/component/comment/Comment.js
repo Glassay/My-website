@@ -21,6 +21,7 @@ class Comment extends React.Component {
     this.setState({
       comments: this.state.comments,
     });
+    console.log(comment);
   }
 
   render() {

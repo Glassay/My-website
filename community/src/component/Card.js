@@ -8,7 +8,6 @@ import { Modal } from 'semantic-ui-react';
 import styles from './Card.less';
 import Comment from './comment/Comment';
 
-
 class Card extends React.Component {
   constructor() {
     super();
