@@ -8,7 +8,7 @@ import React from 'react';
 import { Layout, Avatar, Row, Button } from 'antd';
 import { Link, Switch, Route } from 'dva/router';
 import styles from './BasicLayout.less';
-import Card from '../component/Card';
+import Main from '../component/main';
 import Edit from '../component/edit';
 
 const { Header, Content, Footer } = Layout;
@@ -22,7 +22,7 @@ class MainLayout extends React.Component {
           <Header className={styles.header}>
             <Row type="flex" justify="space-between" align="middle">
               <Link to="/main">
-                <div className={styles.title}>Todpole‘Community</div>
+                <div className={styles.title}>Todpole’Community</div>
               </Link>
               <Row type="flex" justify="space-between" align="middle" style={{ width: '14%', marginRight: '10%' }} >
                 <Link to="/main/text">
@@ -36,13 +36,7 @@ class MainLayout extends React.Component {
             <Switch>
               <Route path="/main/text" render={() => <Edit />} />
               <Route
-                path="/main" render={() =>
-                  <div style={{ padding: 24, minHeight: 280 }} className={styles.color}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>}
+                path="/main" render={() => <Main />}
               />
             </Switch>
           </Content>
