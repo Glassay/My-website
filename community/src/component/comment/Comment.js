@@ -6,7 +6,6 @@
 import React from 'react';
 import CommentInput from '../comment/CommentInput.js';
 import CommentList from '../comment/CommentList.js';
-import styles from './comment.less';
 
 class Comment extends React.Component {
   constructor() {
@@ -21,12 +20,11 @@ class Comment extends React.Component {
     this.setState({
       comments: this.state.comments,
     });
-    console.log(comment);
   }
 
   render() {
     return (
-      <div className={styles.wrapper}>
+      <div>
         <CommentInput
           onSubmit={this.handleSubmitComment.bind(this)}
         />
