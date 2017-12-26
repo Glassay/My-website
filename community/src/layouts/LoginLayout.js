@@ -18,6 +18,8 @@ class Login extends React.Component {
     this.state = {
       username: '',
       passward: '',
+      registerUsername: '',
+      registerPassward: '',
     };
     // this.onLogin = this.onLogin.bind(this);
   }
@@ -29,7 +31,6 @@ class Login extends React.Component {
     })
     .then((response) => {
       if (response.data) {
-        console.log(response.data);
         this.props.history.push('/main');
       }
     });
@@ -44,6 +45,18 @@ class Login extends React.Component {
   handlePasswardChange(event) {
     this.setState({
       passward: event.target.value,
+    });
+  }
+
+  handleRegisterName(e) {
+    this.setState({
+      registerUsername: e.target.value,
+    });
+  }
+
+  handleRegisterPassward(e) {
+    this.setState({
+      registerPassward: e.target.value,
     });
   }
 
@@ -108,7 +121,9 @@ class Login extends React.Component {
                               fluid
                               icon="user"
                               iconPosition="left"
-                              placeholder="E-mail address"
+                              placeholder="username"
+                              value={this.state.registerUsername}
+                              onChange={this.handleRegisterName.bind(this)}
                             />
                           </div>
                           <Header as="h5" color="teal">Password</Header>
@@ -120,6 +135,8 @@ class Login extends React.Component {
                               iconPosition="left"
                               placeholder="Password"
                               type="password"
+                              value={this.state.registerPassward}
+                              onChange={this.handleRegisterPassward.bind(this)}
                             />
                           </div>
                           <div className={styles.register}>

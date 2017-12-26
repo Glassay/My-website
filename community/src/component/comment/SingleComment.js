@@ -14,8 +14,10 @@ class SingleComment extends React.Component {
           <img className={styles.head} src="http://2xtx.com/img/2017/07/f394270153.jpg" alt="头像" />
         </div>
         <div className={styles.head_square}>
-          <div className={styles.head_name}>{this.props.comment.username}：</div>
-          <p>{this.props.comment.content}</p>
+          <div>
+            <div className={styles.head_name}>{this.props.comment.username}：</div>
+            <p className={styles.subject_comment}>{this.props.comment.content}</p>
+          </div>
         </div>
       </div>
     );
