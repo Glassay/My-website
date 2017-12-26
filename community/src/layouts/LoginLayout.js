@@ -7,6 +7,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Button, Form, Grid, Header, Segment, Modal } from 'semantic-ui-react';
+import { message } from 'antd';
 import 'semantic-ui-css/semantic.min.css';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './LoginLayout.less';
@@ -35,7 +36,23 @@ class Login extends React.Component {
       }
     });
   }
-
+  onRegister = () => {
+    axios.post('http://127.0.0.1:7001/register', {
+      user: this.state.registerUsername,
+      password: this.state.registerPassward,
+    })
+    .then((response) => {
+      if (response.data) {
+        message.success('注册成功！');
+        this.setState({
+          registerUsername: '',
+          registerPassward: '',
+        });
+      } else {
+        message.error('注册失败,请更改用户名重新注册');
+      }
+    });
+  }
   handleUsernameChange(event) {
     this.setState({
       username: event.target.value,
@@ -140,7 +157,7 @@ class Login extends React.Component {
                             />
                           </div>
                           <div className={styles.register}>
-                            <Button animated="fade" color="teal" fluid size="large">
+                            <Button animated="fade" color="teal" fluid size="large" onClick={this.onRegister}>
                               <Button.Content hidden>Register</Button.Content>
                               <Button.Content visible>注册</Button.Content>
                             </Button>

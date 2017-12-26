@@ -22,7 +22,7 @@ module.exports = app => {
         // res = knex.select().from('User');
         console.log('res: ', res);
         if (res) {
-          return true;
+          return res;
         }
         return false;
       } catch (e) {
@@ -32,14 +32,18 @@ module.exports = app => {
     }
 
     * register(a, b) {
-      // let res;
+      let res;
       try {
-        app.mysql.insert('User', { user: a, password: b });
+        res = yield app.mysql.get('User', { user: a });
+        if (!res) {
+          app.mysql.insert('User', { user: a, password: b });
+          return true;
+        }
+        return false;
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
       }
-      return true;
     }
   }
   return Sql;

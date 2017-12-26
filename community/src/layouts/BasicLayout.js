@@ -15,6 +15,12 @@ const { Header, Content, Footer } = Layout;
 
 
 class MainLayout extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      user: '',
+    };
+  }
   render() {
     return (
       <div>
@@ -28,7 +34,7 @@ class MainLayout extends React.Component {
                 <Link to="/main/text">
                   <Button icon="edit" type="primary" className={styles.button}>发帖</Button>
                 </Link>
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" size="large" className={styles.icon} />
+                <Avatar src="https://avatars0.githubusercontent.com/u/23077808?s=400&u=fc701315d97318f528f098bd228b64a0f30797d1&v=4" size="large" className={styles.icon} />
               </Row>
             </Row>
           </Header>
