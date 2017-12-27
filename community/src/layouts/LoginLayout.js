@@ -25,16 +25,23 @@ class Login extends React.Component {
     // this.onLogin = this.onLogin.bind(this);
   }
 
-  onLogin = () => {
-    axios.post('http://127.0.0.1:7001/getuserid', {
+  onLogin = async () => {
+    // axios.post('http://127.0.0.1:7001/getuserid', {
+    //   user: this.state.username,
+    //   password: this.state.passward,
+    // })
+    // .then((response) => {
+    //   if (response.data) {
+    //     this.props.history.push('/main');
+    //   }
+    // });
+    const resp = await axios.post('http://127.0.0.1:7001/getuserid', {
       user: this.state.username,
       password: this.state.passward,
-    })
-    .then((response) => {
-      if (response.data) {
-        this.props.history.push('/main');
-      }
     });
+    if (resp.data) {
+      this.props.history.push('/main');
+    }
   }
   onRegister = () => {
     axios.post('http://127.0.0.1:7001/register', {
