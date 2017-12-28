@@ -11,7 +11,6 @@ import 'semantic-ui-css/semantic.min.css';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './LoginLayout.less';
 
-// const { browserHistory } = Router;
 const Login = ({ login, dispatch }) => {
   return (
     <div className="login-form">
@@ -92,7 +91,7 @@ const Login = ({ login, dispatch }) => {
                           />
                         </div>
                         <div className={styles.register}>
-                          <Button animated="fade" color="teal" fluid size="large" onClick={() => dispatch({ type: 'login/login' })}>
+                          <Button animated="fade" color="teal" fluid size="large" onClick={() => dispatch({ type: 'login/register' })}>
                             <Button.Content hidden>Register</Button.Content>
                             <Button.Content visible>注册</Button.Content>
                           </Button>

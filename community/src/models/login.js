@@ -1,6 +1,7 @@
 
 import { routerRedux } from 'dva/router';
-import { loginfunc } from '../service/login';
+import { message } from 'antd';
+import { loginfunc, registerfunc } from '../service/login';
 
 export default {
   namespace: 'login',
@@ -10,21 +11,25 @@ export default {
     passward: '',
     registerUsername: '',
     registerPassward: '',
-    status: '',
   },
 
   effects: {
     * login({ payload }, { call, put, select }) {
-      console.log('effects');
       const login = yield select(state => state.login);
       const key = yield call(loginfunc, login);
-      yield put({
-        type: 'changeStatus',
-        payload: key,
-      });
-      const stu = yield select(state => state.login.status);
-      if (stu) {
+      if (key) {
         yield put(routerRedux.push('/main'));
+      } else {
+        message.error('账号或密码错误，登录失败！');
+      }
+    },
+    * register({ payload }, { call, select }) {
+      const login = yield select(state => state.login);
+      const regi = yield call(registerfunc, login);
+      if (regi) {
+        message.success('注册成功！');
+      } else {
+        message.error('注册失败！该账号已被注册');
       }
     },
   },
@@ -52,12 +57,6 @@ export default {
       return {
         ...state,
         registerPassward: payload.target.value,
-      };
-    },
-    changeStatus(state, { payload }) {
-      return {
-        ...state,
-        status: payload,
       };
     },
   },
