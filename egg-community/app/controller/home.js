@@ -6,7 +6,8 @@ module.exports = app => {
   class HomeController extends app.Controller {
     * getUserId() {
       const { user, password } = this.ctx.request.body;
-      this.ctx.body = yield this.service.text.getUserId(user, password);
+      const res = yield this.service.text.getUserId(user, password);
+      this.ctx.body = res;
     }
     * register() {
       const { user, password } = this.ctx.request.body;
