@@ -25,7 +25,7 @@ const Login = ({ login, dispatch }) => {
           <Header as="h1" color="teal" textAlign="center">
             Todpole’Community
           </Header>
-          <Form size="large">
+          <Form size="large" className="sr">
             <Segment stacked>
               <Form.Input
                 fluid

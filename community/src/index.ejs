@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Todpole’Community</title>
+  <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.0-beta.24/scrollreveal.js"></script>
   <link rel="stylesheet" href="/index.css" />
 </head>
 <body>
   <div id="root"></div>
+  <script>
+      window.onload = function () {
+          // 设置参数
+          var config = {
+              origin: 'left', // 动画开始的方向
+              duration: 1000, // 动画持续时间
+              delay: 0, // 延迟
+              rotate: {x: 0, y: 0, z: 0}, // 过度到0的初始角度
+              opacity: 0, // 初始透明度
+              scale: 0.2, //缩放
+              easing: 'linear', // 缓动'ease', 'ease-in-out'，'linear'
+          }
+          // 引用
+          window.sr = ScrollReveal();
+          sr.reveal('.sr', config, 50);
+      }
+  </script>
 </body>
 </html>

@@ -18,39 +18,41 @@ class Card extends React.Component {
   }
   render() {
     return (
-      <div className={styles.card}>
-        <div className={styles.title} >
-          <Row type="flex" justify="space-between" align="bottom">
-            <div className={styles.topic}>{this.state.title}</div>
-            <Row type="flex" justify="space-between" align="middle">
-              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" className={styles.h} />
-              <div className={styles.h}>Kidder</div>
-              <div className={styles.h}>2017-10-09</div>
+      <div className="sr">
+        <div className={styles.card}>
+          <div className={styles.title}>
+            <Row type="flex" justify="space-between" align="bottom">
+              <div className={styles.topic}>{this.state.title}</div>
+              <Row type="flex" justify="space-between" align="middle">
+                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" className={styles.h} />
+                <div className={styles.h}>Kidder</div>
+                <div className={styles.h}>2017-10-09</div>
+              </Row>
             </Row>
-          </Row>
-        </div>
-        <Divider className={styles.divider} />
-        <Modal
-          trigger={
-            <div className={styles.over_article}>{this.state.article}</div>
-          }
-        >
-          <Modal.Header>{this.state.title}</Modal.Header>
-          <Modal.Content>
-            <Modal.Description>
-              <div className={styles.main_article}>{this.state.article}</div>
-            </Modal.Description>
-          </Modal.Content>
-          {/* </Modal.Actions> */}
-          <hr />
-          <Comment />
-        </Modal>
-        <div>
-          <div className={styles.cardicon}>
-            <Row type="flex" justify="space-between" align="middle" style={{ width: '14%', marginTop: 10 }} >
-              <Icon type="like" />1032
-              <Icon type="mail" />2332
-            </Row>
+          </div>
+          <Divider className={styles.divider} />
+          <Modal
+            trigger={
+              <div className={styles.over_article}>{this.state.article}</div>
+            }
+          >
+            <Modal.Header>{this.state.title}</Modal.Header>
+            <Modal.Content>
+              <Modal.Description>
+                <div className={styles.main_article}>{this.state.article}</div>
+              </Modal.Description>
+            </Modal.Content>
+            {/* </Modal.Actions> */}
+            <hr />
+            <Comment />
+          </Modal>
+          <div>
+            <div className={styles.cardicon}>
+              <Row type="flex" justify="space-between" align="middle" style={{ width: '14%', marginTop: 10 }} >
+                <Icon type="like" />1032
+                <Icon type="mail" />2332
+              </Row>
+            </div>
           </div>
         </div>
       </div>
