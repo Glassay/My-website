@@ -18,7 +18,7 @@ class Card extends React.Component {
   }
   render() {
     return (
-      <div className="sr">
+      <div className="bar">
         <div className={styles.card}>
           <div className={styles.title}>
             <Row type="flex" justify="space-between" align="bottom">
