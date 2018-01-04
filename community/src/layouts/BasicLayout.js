@@ -15,12 +15,6 @@ const { Header, Content, Footer } = Layout;
 
 
 class MainLayout extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      user: '',
-    };
-  }
   render() {
     return (
       <div>
