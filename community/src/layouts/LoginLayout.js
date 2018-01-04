@@ -22,7 +22,7 @@ const Login = ({ login, dispatch }) => {
         className={styles.container}
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <div className="bar">
+          <div data-aos="zoom-in">
             <Header as="h1" color="teal" textAlign="center">
               Todpole’Community
             </Header>

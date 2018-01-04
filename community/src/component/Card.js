@@ -18,7 +18,7 @@ class Card extends React.Component {
   }
   render() {
     return (
-      <div className="bar">
+      <div data-aos="zoom-in">
         <div className={styles.card}>
           <div className={styles.title}>
             <Row type="flex" justify="space-between" align="bottom">

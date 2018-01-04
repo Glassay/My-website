@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Todpole’Community</title>
-  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <link href="https://cdn.bootcss.com/aos/2.2.0/aos.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/aos/2.2.0/aos.js"></script>
   <link rel="stylesheet" href="/index.css" />
 </head>
 <body>
   <div id="root"></div>
   <script>
-    window.onload = function () {
-      window.sr = ScrollReveal();
-      sr.reveal('.bar', { duration: 2000 });
-    }
+    AOS.init({
+      offset: 200,
+      duration: 400,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
   </script>
 </body>
 </html>
