@@ -2,16 +2,16 @@
  * 2017-12-20 kidder && Glassay
  */
 'use strict';
-const knex = require('knex')({
-  client: 'mysql',
-  connection: {
-    host: '127.0.0.1',
-    port: '3306',
-    user: 'root',
-    password: '111111',
-    database: 'community',
-  },
-});
+// const knex = require('knex')({
+//   client: 'mysql',
+//   connection: {
+//     host: '127.0.0.1',
+//     port: '3306',
+//     user: 'root',
+//     password: '111111',
+//     database: 'community',
+//   },
+// });
 
 module.exports = app => {
   class Sql extends app.Service {
@@ -40,6 +40,16 @@ module.exports = app => {
           return true;
         }
         return false;
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+    }
+
+    * editup(a, b, c) {
+      try {
+        app.mysql.insert('Articles', { topic: a, articles: b, user: c });
+        return true;
       } catch (e) {
         this.ctx.logger.error(e);
         return false;

@@ -13,6 +13,10 @@ module.exports = app => {
       const { user, password } = this.ctx.request.body;
       this.ctx.body = yield this.service.text.register(user, password);
     }
+    * editup() {
+      const { article_title, article_content, user } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.editup(article_title, article_content, user);
+    }
   }
 
   return HomeController;

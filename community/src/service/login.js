@@ -7,18 +7,16 @@ export async function loginfunc(payload) {
     password: payload.passward,
   });
   return resp.data;
+  // console.log('123');
   // return request('http://127.0.0.1:7001/getuserid', {
   //   method: 'post',
-  //   mode: 'cors',
+  //   // mode: 'cors',
   //   // credentials: 'include',
   //   body: {
   //     user: payload.username,
   //     password: payload.passward,
   //   },
   // });
-  // if (resp.data) {
-  //   this.props.history.push('/main');
-  // }
 }
 
 export async function registerfunc(payload) {
