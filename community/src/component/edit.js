@@ -6,7 +6,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Divider, Input, Button, Row } from 'antd';
-import styles from './edit.less';
+import styles from './Edit.less';
 
 const { TextArea } = Input;
 
@@ -36,3 +36,4 @@ const Edit = ({ edit, dispatch }) => {
 };
 
 export default connect(({ edit }) => ({ edit }))(Edit);
+

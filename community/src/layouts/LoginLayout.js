@@ -8,7 +8,6 @@ import React from 'react';
 import { connect } from 'dva';
 import { Button, Form, Grid, Header, Segment, Modal } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './LoginLayout.less';
 
 const Login = ({ login, dispatch }) => {

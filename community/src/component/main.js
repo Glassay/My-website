@@ -5,7 +5,7 @@
 import React from 'react';
 import { Pagination, Row } from 'antd';
 import Card from './Card';
-import styles from './main.less';
+import styles from './Main.less';
 
 
 class Main extends React.Component {

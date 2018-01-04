@@ -8,8 +8,8 @@ import React from 'react';
 import { Layout, Avatar, Row, Button } from 'antd';
 import { Link, Switch, Route } from 'dva/router';
 import styles from './BasicLayout.less';
-import Main from '../component/main';
-import Edit from '../component/edit';
+import Main from '../component/Main';
+import Edit from '../component/Edit';
 
 const { Header, Content, Footer } = Layout;
 
