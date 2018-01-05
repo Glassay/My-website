@@ -18,7 +18,6 @@ const Edit = ({ edit, dispatch }) => {
         className={styles.tip}
         value={edit.article_title}
         onChange={e => dispatch({ type: 'edit/writeTitle', payload: e })}
-        ref={(title) => { this.title = title; }}
       />
       <Divider />
       <TextArea
@@ -29,7 +28,7 @@ const Edit = ({ edit, dispatch }) => {
       />
       <Divider />
       <Row type="flex" justify="end">
-        <Button icon="rocket" type="primary" className={styles.up}>发布</Button>
+        <Button icon="rocket" type="primary" className={styles.up} onClick={() => dispatch({ type: 'edit/editup' })}>发布</Button>
       </Row>
     </div>
   );

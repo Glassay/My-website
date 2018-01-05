@@ -24,6 +24,10 @@ export default {
           type: 'main/setuser',
           payload: login.username,
         });
+        yield put({
+          type: 'edit/setuser',
+          payload: login.username,
+        });
         const header = yield call(getuserheader, login);
         yield put({
           type: 'main/setuserheader',
