@@ -49,7 +49,19 @@ module.exports = app => {
     * editup(a, b, c) {
       try {
         app.mysql.insert('Articles', { topic: a, articles: b, user: c });
+        // app.mysql.query('');
         return true;
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+    }
+
+    * getuserheader(a) {
+      let res;
+      try {
+        res = app.mysql.query(`SELECT header FROM User WHERE user=${a};`);
+        return res;
       } catch (e) {
         this.ctx.logger.error(e);
         return false;

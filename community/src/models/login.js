@@ -19,6 +19,16 @@ export default {
       const key = yield call(loginfunc, login);
       if (key) {
         yield put(routerRedux.push('/main'));
+        yield put({
+          type: 'setuser',
+          payload,
+        });
+        // const login1 = yield select(state => state.login);
+        // const header = yield call(getuserheader, login1);
+        // yield put({
+        //   type: 'setuserheader',
+        //   payload: header,
+        // });
       } else {
         message.error('账号或密码错误，登录失败！');
       }

@@ -17,6 +17,10 @@ module.exports = app => {
       const { article_title, article_content, user } = this.ctx.request.body;
       this.ctx.body = yield this.service.text.editup(article_title, article_content, user);
     }
+    * getuserheader() {
+      const { user } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.getuserheader(user);
+    }
   }
 
   return HomeController;

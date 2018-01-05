@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import main from '../models/main';
 // import request from '../utils/request';
 
 export async function loginfunc(payload) {
@@ -6,6 +7,10 @@ export async function loginfunc(payload) {
     user: payload.username,
     password: payload.passward,
   });
+  // const header = await axios.post('http://127.0.0.1:7001/getuserheader', {
+  //   user: payload.username,
+  // });
+
   return resp.data;
   // console.log('123');
   // return request('http://127.0.0.1:7001/getuserid', {
@@ -17,6 +22,14 @@ export async function loginfunc(payload) {
   //     password: payload.passward,
   //   },
   // });
+}
+
+export async function getuserheader(payload) {
+  console.log(payload.username);
+  const resp = await axios.post('http://127.0.0.1:7001/getuserheader', {
+    user: payload,
+  });
+  return resp;
 }
 
 export async function registerfunc(payload) {
