@@ -2,7 +2,7 @@ export default {
   namespace: 'main',
 
   state: {
-    user: '',
+    user: '1',
     header: 'https://avatars2.githubusercontent.com/u/23077808?s=460&v=4',
     allArticle: '',
   },
@@ -14,13 +14,13 @@ export default {
     setuser(state, { payload }) {
       return {
         ...state,
-        user: payload.username,
+        user: payload,
       };
     },
     setuserheader(state, { payload }) {
       return {
         ...state,
-        header: payload.payload,
+        header: payload,
       };
     },
   },

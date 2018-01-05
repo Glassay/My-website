@@ -25,11 +25,10 @@ export async function loginfunc(payload) {
 }
 
 export async function getuserheader(payload) {
-  console.log(payload.username);
   const resp = await axios.post('http://127.0.0.1:7001/getuserheader', {
-    user: payload,
+    user: payload.username,
   });
-  return resp;
+  return resp.data[0].header;
 }
 
 export async function registerfunc(payload) {

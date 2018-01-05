@@ -1,7 +1,7 @@
 
 import { routerRedux } from 'dva/router';
 import { message } from 'antd';
-import { loginfunc, registerfunc } from '../service/login';
+import { loginfunc, registerfunc, getuserheader } from '../service/login';
 
 export default {
   namespace: 'login',
@@ -19,16 +19,17 @@ export default {
       const key = yield call(loginfunc, login);
       if (key) {
         yield put(routerRedux.push('/main'));
+        // console.log(payoad);
         yield put({
-          type: 'setuser',
-          payload,
+          type: 'main/setuser',
+          payload: login.username,
         });
-        // const login1 = yield select(state => state.login);
-        // const header = yield call(getuserheader, login1);
-        // yield put({
-        //   type: 'setuserheader',
-        //   payload: header,
-        // });
+        const header = yield call(getuserheader, login);
+        console.log(header);
+        yield put({
+          type: 'main/setuserheader',
+          payload: header,
+        });
       } else {
         message.error('账号或密码错误，登录失败！');
       }
