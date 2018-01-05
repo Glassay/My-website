@@ -13,7 +13,7 @@ class CommentInput extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      // username: '',
       content: '',
     };
   }
@@ -22,11 +22,11 @@ class CommentInput extends React.Component {
     this.textarea.focus();
   }
 
-  handleUsernameChange(event) {
-    this.setState({
-      username: event.target.value,
-    });
-  }
+  // handleUsernameChange(event) {
+  //   this.setState({
+  //     username: event.target.value,
+  //   });
+  // }
 
   handleContentChange(event) {
     this.setState({
@@ -37,7 +37,7 @@ class CommentInput extends React.Component {
   handleSubmit() {
     if (this.props.onSubmit) {
       this.props.onSubmit({
-        username: this.state.username,
+        // username: this.state.username,
         content: this.state.content,
       });
     }
@@ -47,7 +47,7 @@ class CommentInput extends React.Component {
   render() {
     return (
       <div className={styles.comment_input}>
-        <div className={styles.comment_field}>
+        {/* <div className={styles.comment_field}>
           <span className={styles.comment_field_name}>用户名：</span>
           <div className={styles.comment_field_input}>
             <input
@@ -55,7 +55,7 @@ class CommentInput extends React.Component {
               onChange={this.handleUsernameChange.bind(this)}
             />
           </div>
-        </div>
+        </div> */}
         <div className={styles.comment_field}>
           <span className={styles.comment_field_name}>评论内容：</span>
           <div className={styles.comment_field_input}>

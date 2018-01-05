@@ -41,8 +41,13 @@ class Card extends React.Component {
               <Modal.Description>
                 <div className={styles.main_article}>{this.state.article}</div>
               </Modal.Description>
+              {/* <Icon name="heart outline" className={styles.like} /> */}
+              <div className={styles.cardicon}>
+                <Row type="flex" align="middle" style={{ width: '50px', height: '50px', marginTop: 10 }} >
+                  <Icon type="like" />11111
+                </Row>
+              </div>
             </Modal.Content>
-            {/* </Modal.Actions> */}
             <hr />
             <Comment />
           </Modal>

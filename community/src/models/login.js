@@ -25,7 +25,6 @@ export default {
           payload: login.username,
         });
         const header = yield call(getuserheader, login);
-        console.log(header);
         yield put({
           type: 'main/setuserheader',
           payload: header,
