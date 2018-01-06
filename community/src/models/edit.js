@@ -12,14 +12,16 @@ export default {
   },
 
   effects: {
-    * editup({ payload }, { call, select }) {
-      console.log('editup');
+    * editup({ payload }, { call, select, put }) {
       const edit = yield select(state => state.edit);
       const regi = yield call(editupup, edit);
       if (regi) {
         message.success('上传成功！');
+        yield put({
+          type: 'clear',
+        });
       } else {
-        message.error('注册失败!');
+        message.error('上传失败!');
       }
     },
   },
@@ -29,6 +31,13 @@ export default {
       return {
         ...state,
         user: payload,
+      };
+    },
+    clear(state) {
+      return {
+        ...state,
+        article_title: '',
+        article_content: '',
       };
     },
     writeTitle(state, { payload }) {

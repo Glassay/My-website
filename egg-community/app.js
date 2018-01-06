@@ -25,7 +25,7 @@ module.exports = app => {
         table.increments();
         table.string('topic').notNullable().defaultTo('');
         table.string('user').notNullable().defaultTo('');
-        table.string('articles').notNullable().defaultTo('');
+        table.text('articles').notNullable().defaultTo('');
         table.integer('stars').notNullable().defaultTo(0);
         table.timestamp('create_at').defaultTo(knex.fn.now());
         table.charset('utf8');
