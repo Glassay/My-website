@@ -26,7 +26,7 @@ class Card extends React.Component {
             <Row type="flex" justify="space-between" align="bottom">
               <div className={styles.topic}>{article.topic}</div>
               <Row type="flex" justify="space-between" align="middle">
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" className={styles.h} />
+                <Avatar src={article.header} className={styles.h} />
                 <div className={styles.h}>{article.user}</div>
                 <div className={styles.h}>{moment(article.create_at).format('MMMM Do YYYY, h:mm:ss a')}</div>
               </Row>

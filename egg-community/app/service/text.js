@@ -70,12 +70,12 @@ module.exports = app => {
       let res;
       const y = (x - 1) * 10;
       try {
-        res = app.mysql.query(`SELECT * FROM Articles ORDER BY id DESC limit ${y},10;`);
-        // for (let i = 0; i < 10; i++) {
-        //   let user = res[i].user;
-        //   let header = app.mysql.query(`SELECT header FROM User Where user=${user};`);
-        //   console.log(header);
-        // }
+        res = yield app.mysql.query(`SELECT * FROM Articles ORDER BY id DESC limit ${y},10;`);
+        for (let i = 0; i < 10; i++) {
+          console.log(res[i]);
+          const header = yield app.mysql.get('User', { user: res[i].user });
+          res[i].header = header.header;
+        }
         return res;
       } catch (e) {
         this.ctx.logger.error(e);
