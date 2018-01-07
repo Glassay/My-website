@@ -9,13 +9,9 @@ import Card from './Card';
 import styles from './Main.less';
 
 class Main extends React.Component {
-  state = {
-    current: 1,
-  }
   componentWillMount() {
     this.props.dispatch({
       type: 'main/getallArticle',
-      payload: 1,
     });
   }
 
@@ -35,7 +31,7 @@ class Main extends React.Component {
       }
         <Row type="flex" justify="end" className={styles.Pagination}>
           <Pagination
-            current={this.state.current}
+            current={this.props.current}
             onChange={this.onChange}
             total={50}
           />
@@ -47,4 +43,5 @@ class Main extends React.Component {
 
 export default connect(state => ({
   Article: state.main.Article,
+  current: state.main.current,
 }))(Main);

@@ -11,4 +11,6 @@ module.exports = app => {
   app.post('/editup', 'home.editup');
   app.post('/getuserheader', 'home.getuserheader');
   app.post('/pagex', 'home.pagex');
+  app.post('/star', 'home.star');
+  app.post('/staradd', 'home.staradd');
 };

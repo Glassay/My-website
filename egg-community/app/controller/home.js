@@ -25,6 +25,14 @@ module.exports = app => {
       const { page } = this.ctx.request.body;
       this.ctx.body = yield this.service.text.pagex(page);
     }
+    * star() {
+      const { id } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.star(id);
+    }
+    * staradd() {
+      const { stars, id } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.staradd(stars, id);
+    }
   }
 
   return HomeController;

@@ -20,7 +20,6 @@ module.exports = app => {
       try {
         res = yield app.mysql.get('User', { user: a, password: b });
         // res = knex.select().from('User');
-        console.log('res: ', res);
         if (res) {
           return res;
         }
@@ -72,7 +71,33 @@ module.exports = app => {
       const y = (x - 1) * 10;
       try {
         res = app.mysql.query(`SELECT * FROM Articles ORDER BY id DESC limit ${y},10;`);
+        // for (let i = 0; i < 10; i++) {
+        //   let user = res[i].user;
+        //   let header = app.mysql.query(`SELECT header FROM User Where user=${user};`);
+        //   console.log(header);
+        // }
         return res;
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+    }
+    * star(a) {
+      let star;
+      try {
+        star = app.mysql.query(`SELECT stars FROM Articles WHERE id =${a};`);
+        return star;
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+    }
+    * staradd(a, b) {
+      let star;
+      try {
+        star = a + 1;
+        app.mysql.query(`update Articles set stars=${star} where id=${b};`);
+        return star;
       } catch (e) {
         this.ctx.logger.error(e);
         return false;

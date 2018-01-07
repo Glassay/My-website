@@ -1,4 +1,4 @@
-import { getArticles } from '../service/main';
+import { getArticles, star } from '../service/main';
 
 export default {
   namespace: 'main',
@@ -8,12 +8,17 @@ export default {
     header: 'https://avatars2.githubusercontent.com/u/23077808?s=460&v=4',
     Article: [],
     current: 1,
+    fuck: 0,
   },
 
   effects: {
     * changecurrent({ payload }, { put }) {
       yield put({
-        type: 'changecurrent',
+        type: 'changecurrent1',
+        payload,
+      });
+      yield put({
+        type: 'getallArticle',
         payload,
       });
     },
@@ -24,6 +29,9 @@ export default {
         type: 'getArticle',
         payload: Article,
       });
+    },
+    * star({ payload }, { call }) {
+      yield call(star, payload);
     },
   },
 
@@ -40,7 +48,7 @@ export default {
         header: payload,
       };
     },
-    changecurrent(state, { payload }) {
+    changecurrent1(state, { payload }) {
       return {
         ...state,
         current: payload,
