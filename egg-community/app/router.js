@@ -10,4 +10,5 @@ module.exports = app => {
   app.post('/register', 'home.register');
   app.post('/editup', 'home.editup');
   app.post('/getuserheader', 'home.getuserheader');
+  app.post('/pagex', 'home.pagex');
 };

@@ -21,6 +21,10 @@ module.exports = app => {
       const { user } = this.ctx.request.body;
       this.ctx.body = yield this.service.text.getuserheader(user);
     }
+    * pagex() {
+      const { page } = this.ctx.request.body;
+      this.ctx.body = yield this.service.text.pagex(page);
+    }
   }
 
   return HomeController;

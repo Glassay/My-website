@@ -67,6 +67,17 @@ module.exports = app => {
         return false;
       }
     }
+    * pagex(x) {
+      let res;
+      const y = (x - 1) * 10;
+      try {
+        res = app.mysql.query(`SELECT * FROM Articles ORDER BY id DESC limit ${y},10;`);
+        return res;
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+    }
   }
   return Sql;
 };

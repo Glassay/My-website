@@ -33,6 +33,9 @@ export default {
           type: 'main/setuserheader',
           payload: header,
         });
+        yield put({
+          type: 'main/getallArticle',
+        });
       } else {
         message.error('账号或密码错误，登录失败！');
       }
