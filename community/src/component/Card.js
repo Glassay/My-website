@@ -54,7 +54,7 @@ class Card extends React.Component {
           </Modal>
           <div>
             <div className={styles.cardicon}>
-              <Row type="flex" align="middle" style={{ width: '6%', marginTop: 10, marginRight: 5 }} >
+              <Row type="flex" align="middle" style={{ width: '8%', marginTop: 10, marginRight: 5 }} >
                 <Icon type="like" />{article.stars}
               </Row>
             </div>
